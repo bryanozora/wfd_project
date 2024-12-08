@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Moul&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Moul&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
