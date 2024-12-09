@@ -6,13 +6,13 @@
     <title>Music Store</title>
     @Vite('resources/css/app.css')
 </head>
-<body class="bg-gray-900 font-raleway">
-<div class="min-h-screen overflow-x-hidden">
-    @include('includes.navbar')
-    <div>
-        @yield('content')
+<body class="bg-gray-900 font-raleway flex flex-col min-h-screen">
+    <div class="flex-grow">
+        @include('includes.navbar')
+        <div>
+            @yield('content')
+        </div>
     </div>
     @include('includes.footer')
-</div>
 </body>
 </html>
