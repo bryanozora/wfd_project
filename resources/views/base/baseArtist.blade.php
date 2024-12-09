@@ -7,12 +7,12 @@
     @Vite('resources/css/app.css')
 </head>
 <body class="bg-gray-900 font-raleway">
-    @include('includes.navbarArtist')
-
+<div class="min-h-screen overflow-x-hidden">
+    @include('includes.navbar')
     <div>
         @yield('content')
     </div>
-
     @include('includes.footer')
+</div>
 </body>
 </html>
