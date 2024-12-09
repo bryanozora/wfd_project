@@ -1,0 +1,48 @@
+name: Auto Deploy Website on Push
+
+on:
+  push: # This triggers the script to run on every push to the main branch
+    branches:
+      - main
+
+jobs:
+  admin-app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Use Node.js # installs the specified version of nodejs
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+
+    - name: Use PHP # installs the specified version of php
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+
+    - name: Installing Composer
+      run: |
+        curl -sS https://getcomposer.org/installer | php
+        sudo mv composer.phar /usr/local/bin/compose
+    - name: Installing PHP dependencies
+      run: composer install
+
+    - name: Installing Node dependencies
+      run: |
+        npm i
+        npm run build
+      
+    - name: Deploying project # copy files to specified FTP directory
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        exclude: | # Addind this part ensures node_modules will be deployed for the app to run
+          **/.git*
+          **/.git*/**
+          **/.env.example
+          **/.editorconfig
