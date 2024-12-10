@@ -45,8 +45,10 @@
     @endphp
     <div class="max-w-sm bg-gray-800 border border-gray-700 rounded-lg shadow-lg overflow-hidden">
         <a href="/album/{{ $album['id'] }}">
-            <img class="w-80 h-80 object-cover rounded-t-lg" src="{{ URL::asset('images/albums/' . $album['photo']) }}" alt="album photo"/>
-        </a>    
+            <div class="relative w-full h-80">
+                <img class="absolute inset-0 w-full h-full object-cover rounded-t-lg" src="{{ URL::asset('images/albums/' . $album['photo']) }}" alt="album photo"/>
+            </div>
+        </a>
         <div class="p-4">
             <a href="/album/{{ $album['id'] }}">
                 <h5 class="mb-2 text-lg font-semibold text-white font-raleway truncate">{{ $album['name'] }}</h5>

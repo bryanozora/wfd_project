@@ -6,7 +6,7 @@
     <title>Music Store</title>
     @Vite('resources/css/app.css')
 </head>
-<body class="bg-gray-900 font-raleway flex flex-col min-h-screen">
+<body class="bg-gray-900 font-raleway overflow-x-hidden flex flex-col min-h-screen">
     <div class="flex-grow">
         @include('includes.navbar')
         <div>
