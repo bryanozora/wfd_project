@@ -48,7 +48,7 @@
         
         @if ($songs->count() != 0)
         <hr class="mt-6">
-        
+
         <p class="text-3xl text-center font-bold mt-10 font-raleway text-white mb-4">
             Songs
         </p>
@@ -63,10 +63,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $totalDurationInSeconds = 0;
+                    @endphp
+
                     @foreach ($songs as $index => $song)
                         @php
                             $duration = $song['duration'];
                             $formattedDuration = \Carbon\Carbon::parse($duration)->format('i:s');
+                            list($minutes, $seconds) = explode(':', $formattedDuration);
+                            $totalDurationInSeconds += ($minutes * 60) + $seconds;
                         @endphp
                         <tr class="cursor-pointer transition-colors duration-300 hover:bg-gray-700 hover:bg-opacity-80">
                             <td class="py-2 px-4 text-sm text-left">
@@ -80,6 +86,16 @@
                             </td>
                         </tr>
                     @endforeach
+
+                    @php
+                        $totalMinutes = floor($totalDurationInSeconds / 60);
+                        $totalSeconds = $totalDurationInSeconds % 60;
+                        $totalFormatted = sprintf('%02d:%02d', $totalMinutes, $totalSeconds);
+                    @endphp
+                    <tr class="font-bold">
+                        <td colspan="2" class="py-2 px-4 text-sm text-left">Total Duration</td>
+                        <td class="py-2 px-4 text-sm text-right">{{ $totalFormatted }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
