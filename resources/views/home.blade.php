@@ -67,7 +67,7 @@
                 <p class="mb-3 text-gray-400 font-raleway text-sm">{{ $album->song->count() }} Songs</p>
             @endif
             <div class="flex space-x-2">
-                <a href="/album/{{ $album['id'] }}" class="w-1/2 inline-flex font-raleway items-center px-4 py-2 text-sm font-medium text-center text-black bg-green-400 rounded-lg hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300">
+                <a href="/album/{{ $album['id'] }}" class="w-1/2 inline-flex font-raleway items-center px-4 py-2 text-sm font-medium text-center text-black bg-blue-400 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     Details
                     <svg class="w-3.5 h-3.5 ml-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -77,7 +77,7 @@
                     @csrf
                     <button type="submit" 
                         class="w-full rounded-lg inline-flex font-raleway items-center px-4 py-2 text-sm font-medium text-center text-black 
-                        {{ $album->stock == 0 ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300' }}" 
+                        {{ $album->stock == 0 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-400 hover:bg-green-500 focus:outline-none focus:ring-4 focus:ring-green-300' }}" 
                         {{ $album->stock == 0 ? 'disabled' : '' }}>
                         Buy
                         <svg class="w-4 h-4 ml-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
