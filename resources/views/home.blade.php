@@ -28,7 +28,7 @@
 </div>
 
 <h1 class="text-white text-center font-raleway font-bold text-2xl my-8">Genres</h1>
-<div class="text-center mx-auto my-10 font-raleway font-semibold uppercase text-m grid grid-cols-6 text-white gap-2">
+<div class="text-center mx-auto my-10 font-raleway font-semibold uppercase text-m container flex-auto text-white gap-2">
     <a href="/genre" class="mx-4 hover:underline">All</a>    
     @foreach ($genres as $genre)
     <a href="/genre/{{ $genre['id'] }}" class="hover:underline">{{ $genre['name'] }}</a>

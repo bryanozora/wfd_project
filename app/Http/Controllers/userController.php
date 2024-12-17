@@ -30,6 +30,10 @@ class userController extends Controller
             'roleId.required' => 'Role harus diisi'
         ]);
 
+        if(User::where('email', $request->email)->exists()){
+            return redirect('/signUp')->with('error', 'Email sudah terdaftar');
+        }
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
