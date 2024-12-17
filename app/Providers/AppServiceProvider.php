@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\transaction;
 use App\Models\User;
 use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Gate;

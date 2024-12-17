@@ -2,7 +2,7 @@
     <div class="flex lg:flex-1">
         <a href="/" class="-m-1.5 p-1.5">
             <div class="container flex">
-                <h1 class="font-rubik_mono_one text-3xl text-green-400 mx-6">Music Store</h1>
+                <h1 class="font-rubik_mono_one text-2xl text-green-400 mx-6">Music Store</h1>
             </div>
         </a>
     </div>
