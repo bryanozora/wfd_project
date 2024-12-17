@@ -104,10 +104,9 @@
             <h1 class="text-white text-center font-raleway italic text-m my-8">No Songs Found</h1>
         @endif
 
-
+        <hr class="mt-6">
         
         @if ($comments->count() != 0)
-            <hr class="mt-6">
             
             <p class="text-3xl text-center font-bold mt-10 font-raleway text-white mb-4">
                 Comments
