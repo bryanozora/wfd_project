@@ -93,7 +93,7 @@
                         $totalFormatted = sprintf('%02d:%02d', $totalMinutes, $totalSeconds);
                     @endphp
                     <tr class="font-bold">
-                        <td colspan="2" class="py-2 px-4 text-sm text-left">Total Duration</td>
+                        <td colspan="2" class="py-2 px-4 text-sm mt-4 text-left">Total Duration</td>
                         <td class="py-2 px-4 text-sm text-right">{{ $totalFormatted }}</td>
                     </tr>
                 </tbody>
