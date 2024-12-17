@@ -86,18 +86,19 @@
                             </td>
                         </tr>
                     @endforeach
-
-                    @php
-                        $totalMinutes = floor($totalDurationInSeconds / 60);
-                        $totalSeconds = $totalDurationInSeconds % 60;
-                        $totalFormatted = sprintf('%02d:%02d', $totalMinutes, $totalSeconds);
-                    @endphp
-                    <tr class="font-bold">
-                        <td colspan="2" class="py-2 px-4 text-sm mt-4 text-left">Total Duration</td>
-                        <td class="py-2 px-4 text-sm text-right">{{ $totalFormatted }}</td>
-                    </tr>
                 </tbody>
             </table>
+        </div>
+
+        @php
+            $totalMinutes = floor($totalDurationInSeconds / 60);
+            $totalSeconds = $totalDurationInSeconds % 60;
+            $totalFormatted = sprintf('%02d:%02d', $totalMinutes, $totalSeconds);
+        @endphp
+
+        <div class="flex justify-between items-center mt-4 text-white font-raleway">
+            <span class="text-lg font-semibold">Total Duration:</span>
+            <span class="text-lg font-semibold">{{ $totalFormatted }}</span>
         </div>
         @else
             <h1 class="text-white text-center font-raleway italic text-m my-8">No Songs Found</h1>
